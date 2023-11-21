@@ -14,6 +14,7 @@ public class Operation3 {
 		int sci=0;
 		int sum=0;
 		float avg=0;
+		char grade='F';
 		
 		System.out.print("국어점수를 입력하세요: ");
 		kor=scann.nextInt();
@@ -32,11 +33,16 @@ public class Operation3 {
 		avg=(float)sum/4;
 		avg=(int)((avg*100+5)/10)/10f;
 		
-		System.out.println("\n<<<<<<<<<<<<<<<<<<<<<<<성 적 표>>>>>>>>>>>>>>>>>>>>>>>");
+		if(avg<60) {grade='F';}
+		if(avg>=60) {grade='D';}
+		if(avg>=70) {grade='C';}
+		if(avg>=80) {grade='B';}
+		if(avg>=90) {grade='A';}
 		
-		System.out.println("국어\t영어\t수학\t과학\t총점\t평균");
 		
-		System.out.printf("%d\t%d\t%d\t%d\t%d\t%f",kor,eng,math,sci,sum,avg);
+		System.out.println("국어\t영어\t수학\t과학\t총점\t평균\t\t등급");
+		
+		System.out.printf("%d\t%d\t%d\t%d\t%d\t%f\t%c",kor,eng,math,sci,sum,avg,grade);
 	}
 }
 //과목별 평균 총점, 반올림
