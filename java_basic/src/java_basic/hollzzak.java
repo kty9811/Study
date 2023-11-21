@@ -7,6 +7,7 @@ public class hollzzak {
 	public static void main(String[] args) {
 		
 		int input;
+		char juge=' ';
 		
 		Scanner scann=new Scanner(System.in);
 		
@@ -14,13 +15,13 @@ public class hollzzak {
 		
 		input=scann.nextInt();
 		
-		if(input%2==1) {
-		System.out.printf("입력한 정수 %d는 홀수입니다.\n",input);
+		if(input%2>0) {
+		juge='홀';
+		}else {
+		juge='짝';
 		}
 		
-		if(input%2==0) {
-		System.out.printf("입력한 정수 %d는 짝수입니다.",input);
-		}
+		System.out.printf("입력한 숫자: "+input+"은 "+juge+"수입니다.\n");
 	}
 }
 //홀수 짝수 구하기
