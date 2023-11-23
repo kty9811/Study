@@ -4,13 +4,15 @@ public class Gugudan {
 
 	public static void main(String[] args) {
 		//입력
-		int x=2;
 		String result="";
-		//처리
-		for(int i=1; i<10; i++) {
-			result = result+(x+"*"+i+"="+(x*i)+"\n");
+		
+		for(int x=2; x<10; x++) {
+			for(int y=1; y<10;y++) {
+				result=result+(x+"*"+y+"="+(x*y)+"\n");
+			
+			}
+	result=result+"\n";
 		}
-		//출력
 		System.out.println(result);
 	}
 }

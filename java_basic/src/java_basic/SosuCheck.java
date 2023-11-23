@@ -8,19 +8,24 @@ public class SosuCheck {
 		
 		int inputNumber=0;
 		String result="";
+		boolean isSotsu=true;
 		
 		Scanner scann=new Scanner(System.in);
-		System.out.println("정수 입력: ");
+		System.out.print("정수 입력: ");
 		inputNumber=scann.nextInt();
 		
 		for(int i=2; i<inputNumber; i++) {
 			if(inputNumber%i==0) {
-				result="솟수가 아닙니다.";
+				isSotsu=false;
 				break;
 			}else {
-				result="솟수입니다.";
+				isSotsu=true;
 			}
 		}
-		System.out.println(result);
+		
+		if(isSotsu) {
+			System.out.println("솟수입니다.");
+		}else
+		System.out.println("솟수가 아닙니다.");
 	}
 }
