@@ -28,21 +28,30 @@ public class LottoAuto {
 		for(int i=1; i<46; i++) {
 			lotto_num[i-1]=i;
 		}
+		
 		for(int count=0; count<lottoCnt; count++) {
-		int temp=0;
+	
+			int temp=0;
+			
 		for(int i=0; i<45*100; i++) {
+			
 			int tempIndex=(int)(Math.random()*45);
 			temp=lotto_num[0];
+			
 			lotto_num[0]=lotto_num[tempIndex];
 			lotto_num[tempIndex]=temp;
 		}
+		
 		for(int i=0; i<6; i++) {
+			
 			output_num[count][i]=lotto_num[i];
 		}
 		}
 		//Ãâ·Â
 		for(int i=0; i<output_num.length; i++) {
+			
 			for(int j=0; j<output_num[i].length; j++) {
+				
 				System.out.print(output_num[i][j]+"\t");
 			}
 			System.out.println();
