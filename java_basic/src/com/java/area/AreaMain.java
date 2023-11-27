@@ -2,10 +2,6 @@ package com.java.area;
 
 import java.util.Scanner;
 
-import com.java.dto.Circle;
-import com.java.dto.Rectangle;
-import com.java.dto.Triangle;
-
 public class AreaMain {
 	public static void main(String[] args) {
 		
