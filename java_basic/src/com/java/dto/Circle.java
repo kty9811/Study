@@ -1,4 +1,4 @@
-package com.java.area;
+package com.java.dto;
 
 import java.util.Scanner;
 

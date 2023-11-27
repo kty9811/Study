@@ -1,12 +1,12 @@
-package com.java.area;
+package com.java.dto;
 
 import java.util.Scanner;
 
-public class Triangle {
+public class Rectangle {
 
 	public static int bottom;
 	public static int height;
-	public static float area;
+	public static int area;
 	
 	public static void input() {
 	Scanner scann=new Scanner(System.in);
@@ -16,11 +16,11 @@ public class Triangle {
 	height=scann.nextInt();
 	
 	}
-	public static float cal() {
-		area=bottom*height*0.5f;
+	public static int cal() {
+		area=bottom*height;
 		return area;
 	}
 	public static void result() {
-		System.out.println("삼각형의 넓이는"+area+"입니다.");
+		System.out.println("사각형의 넓이는"+area+"입니다.");
 	}
 }
