@@ -2,8 +2,13 @@ package com.java.dto;
 
 import java.util.Scanner;
 
-public class TriangleVO extends Shape {
+import com.java.ifc.Inputable;
+import com.java.ifc.Outputable;
 
+public class TriangleVO extends Shape
+							  implements Inputable, Outputable{
+
+								
 	private int height=10;
 	private int baseLine=100;
 
@@ -45,7 +50,7 @@ public class TriangleVO extends Shape {
 	}
 
 	@Override
-	public void inputData() {
+	public void input() {
 		Scanner scann=new Scanner(System.in);
 		System.out.print("¹Øº¯: ");
 		this.baseLine=scann.nextInt();
@@ -56,10 +61,10 @@ public class TriangleVO extends Shape {
 	}
 
 	@Override
-	public String outputMessage() {
+	public String output() {
 		return "»ï°¢Çü ³ÐÀÌ";
 		
 	}
 	
-
+								
 }
