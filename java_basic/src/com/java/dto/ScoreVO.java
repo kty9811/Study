@@ -2,14 +2,36 @@ package com.java.dto;
 
 import java.util.Scanner;
 
-public class ScoreVO {
+public class ScoreVO implements Comparable<ScoreVO>{
 
-	public String name;
-	public int kor;
-	public int math;
-	public int eng;
-	public int scien;
+	private String name;
+	private int kor;
+	private int math;
+	private int eng;
+	private int scien;
 	
+	
+	
+	public String getName() {
+		return name;
+	}
+
+	public int getKor() {
+		return kor;
+	}
+
+	public int getMath() {
+		return math;
+	}
+
+	public int getEng() {
+		return eng;
+	}
+
+	public int getScien() {
+		return scien;
+	}
+
 	public int total() {
 		return kor+math+eng+scien;
 	}
@@ -41,5 +63,11 @@ public class ScoreVO {
 	}
 	public void printScore() {
 		System.out.println(name+"\t"+kor+"\t"+eng+"\t"+math+"\t"+scien+"\t"+total()+"\t"+evg());
+	}
+
+	@Override
+	public int compareTo(ScoreVO other) {
+		
+		return this.name.compareTo(other.getName());
 	}
 }
