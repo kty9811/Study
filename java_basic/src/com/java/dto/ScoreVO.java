@@ -1,16 +1,26 @@
 package com.java.dto;
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class ScoreVO implements Comparable<ScoreVO>{
 
 	private String name;
+	private String stuNum;
 	private int kor;
 	private int math;
 	private int eng;
 	private int scien;
+	private Date regDate;
 	
 	
+	public String getStuNum() {
+		return stuNum;
+	}
+	
+	public Date getRegDate() {
+		return regDate;
+	}
 	
 	public String getName() {
 		return name;
@@ -46,6 +56,9 @@ public class ScoreVO implements Comparable<ScoreVO>{
 		System.out.print("이름 : ");
 		name = scann.nextLine();
 		
+		System.out.print("학번 : ");
+		stuNum = scann.nextLine();
+		
 		System.out.print("국어 : ");
 		kor = scann.nextInt();scann.nextLine();
 		
@@ -57,17 +70,49 @@ public class ScoreVO implements Comparable<ScoreVO>{
 		
 		System.out.print("과학 : ");
 		scien = scann.nextInt();scann.nextLine();
+		
+		regDate=new Date();
 	}
 	public static void printLabel() {
-		System.out.println("이름\t\t국어\t영어\t수학\t과학\t총점\t평균");
+		System.out.println("학번\t이름\t\t국어\t영어\t수학\t과학\t총점\t평균\t등록일");
 	}
 	public void printScore() {
-		System.out.println(name+"\t"+kor+"\t"+eng+"\t"+math+"\t"+scien+"\t"+total()+"\t"+evg());
+		
+		SimpleDateFormat stdFormat=new SimpleDateFormat("yyyy-MM-dd");
+		
+		String regDate=stdFormat.format(this.regDate);
+		String today=stdFormat.format(new Date());
+		
+		if(regDate.equals(today)) {
+			regDate=new SimpleDateFormat("HH:mm:ss").format(this.regDate);
+		}
+		
+		System.out.println(stuNum+"\t"+name+"\t"+kor+"\t"+eng+"\t"+math+"\t"+scien
+				+"\t"+total()+"\t"+evg()+"\t"+regDate);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof ScoreVO) {
+			ScoreVO other=(ScoreVO)obj;
+			return other.equals(stuNum);
+		}else {
+			return false;
+		}
+	}
+
+	@Override
+	public int hashCode() {
+
+		return super.hashCode();
 	}
 
 	@Override
 	public int compareTo(ScoreVO other) {
-		
-		return this.name.compareTo(other.getName());
+		if(this.stuNum.equals(other.stuNum)) {
+			return 0;
+		}else {
+		return other.getRegDate().compareTo(this.regDate);
 	}
+}
 }

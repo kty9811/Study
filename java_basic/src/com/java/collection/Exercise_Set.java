@@ -10,7 +10,8 @@ public class Exercise_Set {
 	public static void main(String[] args) {
 
 		Set<ScoreVO> set=new TreeSet<ScoreVO>();
-		Set<ScoreVO> treeSetByComparator=new TreeSet<ScoreVO>(new ScoreTotalComparator());
+		Set<ScoreVO> treeSetByComparator
+		=new TreeSet<ScoreVO>(new ScoreTotalComparator());
 		
 		for(int i=0; i<3;i++) {
 		ScoreVO score1=new ScoreVO();
@@ -21,11 +22,14 @@ public class Exercise_Set {
 		}
 		
 		Iterator<ScoreVO>it=set.iterator();
+		
 		while(it.hasNext()) {
 			it.next().printScore();
 		}
 		System.out.println("==============================");
+		
 		it=treeSetByComparator.iterator();
+		
 		while(it.hasNext()) {
 			it.next().printScore();
 		}
