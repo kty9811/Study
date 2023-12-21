@@ -1,7 +1,7 @@
 import com.java.dto.ScoreVO;
 
 public class Object {
-
+ 
 	public static void main(String[] args) {
 		ScoreVO score1=new ScoreVO();
 		ScoreVO score2=new ScoreVO();
