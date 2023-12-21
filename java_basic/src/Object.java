@@ -9,6 +9,8 @@ public class Object {
 		score1.input();
 		score2.input();
 		
+		
+		
 		System.out.println("score1.hashCode(): "+score1.hashCode());
 		System.out.println("score2.hashCode(): "+score2.hashCode());
 		System.out.println("score1.equals(score2): "+score1.equals(score2));
